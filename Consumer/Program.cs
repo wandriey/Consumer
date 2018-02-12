@@ -10,6 +10,11 @@ namespace Consumer
     {
         static void Main(string[] args)
         {
+            using (var client = new ServiceReference.Service1Client())
+            {
+                Console.WriteLine(client.getMyName());
+            }
+            Console.ReadLine();
         }
     }
 }
