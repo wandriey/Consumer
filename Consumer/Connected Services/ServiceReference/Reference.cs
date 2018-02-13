@@ -20,6 +20,12 @@ namespace Consumer.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getMyName", ReplyAction="http://tempuri.org/IService1/getMyNameResponse")]
         System.Threading.Tasks.Task<string> getMyNameAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getMyEmail", ReplyAction="http://tempuri.org/IService1/getMyEmailResponse")]
+        string getMyEmail();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getMyEmail", ReplyAction="http://tempuri.org/IService1/getMyEmailResponse")]
+        System.Threading.Tasks.Task<string> getMyEmailAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace Consumer.ServiceReference {
         
         public System.Threading.Tasks.Task<string> getMyNameAsync() {
             return base.Channel.getMyNameAsync();
+        }
+        
+        public string getMyEmail() {
+            return base.Channel.getMyEmail();
+        }
+        
+        public System.Threading.Tasks.Task<string> getMyEmailAsync() {
+            return base.Channel.getMyEmailAsync();
         }
     }
 }

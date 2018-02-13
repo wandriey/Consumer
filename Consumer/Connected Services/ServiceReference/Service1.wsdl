@@ -12,16 +12,35 @@
   <wsdl:message name="IService1_getMyName_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMyNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_getMyEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMyEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMyEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMyEmailResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="getMyName">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getMyName" message="tns:IService1_getMyName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getMyNameResponse" message="tns:IService1_getMyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMyEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getMyEmail" message="tns:IService1_getMyEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getMyEmailResponse" message="tns:IService1_getMyEmail_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="getMyName">
       <soap:operation soapAction="http://tempuri.org/IService1/getMyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/getMyEmail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
